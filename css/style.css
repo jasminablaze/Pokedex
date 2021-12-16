@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+--background-color: rgb(146, 206, 226);
+--primary-color: rgb(58, 54, 54) ;
+--font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+body {
+    background-color: var(--background-color);
+    display: flex;
+    line-height: 1.6;
+    font-family: var(--font-family);
+    font-weight: bold;
+    color: var(--primary-color);
+
+}
+.page-logo {
+flex: 0 1 200px;
+float: left;
+width: 150px;
+height: 80px;
+}
