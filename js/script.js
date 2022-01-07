@@ -1,51 +1,77 @@
-
-//Created an IIFE to wrap the previous 'global variables' and turn them into 'local variables'.*/
 let pokemonRepository = (function() {
     
-  let pokemonList = [
-      {name:"Venusaur",height:2 , type:["grass","poison"]},
-      {name:"Wartortle", height:"1", type:"water"}, 
-      {name:"Cubchoo", height: 0.5, type:"ice"}
-  ];
-  function nameList (name){
-      return (name === pokemonList.name);
-  }
-  pokemonList.filter(nameList);
-  
-  //Function to return all items within the pokemonList array.
+    let pokemonList = [
+    {
+        name:"Venusaur",
+        height:2 , 
+        type:["grass","poison"]
+    },
+    {
+        name:"Wartortle", 
+        height:"1",
+        type:"water"
+    }, 
+    {
+            name:"Cubchoo",
+         height: 0.5,
+          type:"ice"
+        },
+        {
+            name:"Charmander",
+            height:0.6 , 
+            type:["fire"]
+        },
+    ];
+    function add(pokemon) {
+        
+        if (
+        typeof pokemon === 'object' &&
+        'name' in pokemon &&
+        'type' in pokemon &&
+        'height' in pokemon
+        ) {
+            pokemonList.push(pokemon);
+        } else {
+            console.log('Pokemon is not correct');
+        }
+    }
     function getAll() {
-      return pokemonList;
-  }
+        return pokemonList;
+    }
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector(".pokemon-list");
+        let listpokemon = document.createElement("li");
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        button.classList.add("button-class");
+        listpokemon.appendChild(button);
+        pokemonList.appendChild(listpokemon);
 
-  //Created function to, when required, add new pokemon to the pokemonList array.
-  function add(newPokemon) {
-      pokemonList.push(newPokemon);
-      //Explanation: if-else statement to check whether new pokemon entered is an object.
-      if (typeof newPokemon === 'object') {
-          pokemonList.push(newPokemon);
-      } else {
-          console.log('Did not add - this must be an object');
+        //on-click event
+        button.addEventListener('click', function() {
+            showDetails(pokemon)
+        });
       }
-  }
-     return {
-      getAll: getAll,
-      add: add
-  };
+
+      function showDetails(pokemon) {
+        console.log(pokemon);
+    };
+      return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem
+      };
+      
 })();
 
-//Added an if-else statement to highlight the largest pokemon in the array.*/
-function printArrayDetails(list) {
-  list.forEach(function(pokemon) {
-      if (pokemon.height >= 2.0) {
-         document.write('<br>', '<br>'  + pokemon.name + ' (height: ' + pokemon.height + ') - Wow, that\'s big! ');
-      } else {
-         document.write('<br>', '<br>' + pokemon.name + ', (height:   ' + pokemon.height +')') ;
-          
+pokemonRepository.add({ 
+    name: "Pikachu",
+    height: 0.3,
+    type: ["electric"] 
+});
 
-      }
-  });
-}
+console.log(pokemonRepository.getAll());
 
-printArrayDetails(pokemonRepository.getAll());
-    
-
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
