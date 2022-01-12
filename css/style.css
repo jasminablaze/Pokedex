@@ -6,54 +6,62 @@
 --primary-color: rgb(58, 54, 54) ;
 --font-family:Verdana, Geneva, Tahoma, sans-serif;
 
-
 }
-
 
 body {
     background-color: var(--background-color);
     line-height: 1.8;
     font-family: var(--font-family);
-    font-weight: bold;
     color: var(--primary-color);
-
 }
 .page-logo {
-flex: 0 1 200px;
+
 float: left;
-width: 150px;
+width: 100px;
 height: 80px;
 }
 h1{
-    margin: 8px;
+    padding-top: 30px;
+    text-align: center;
+  
 }
-.button-class {
-    background-color: #4caf50; /* Green */
-    border: none;
+li{
+    padding: 10px;
+}
+button{
+    list-style-type:none;
+    cursor:pointer;
+    border-radius:30px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    padding:10px;
+    width:250px
+}
+  button:hover {
     color: white;
-    padding: 12px 30px;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; 
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border: 2px solid #032004;
-    
+    background-color:palevioletred;
   }
   
 .pokemon-list {
    
     list-style-type: none;
+    text-align: center;  
+}
+.pokemon-container{
+   
+    text-align: center;  
 }
 
-.pokemon-container{
-    display: table-row;
-    margin: auto 40px;
-   
-    
-}
+
+
+
+
+
+
+
+
+
+
+
