@@ -65,11 +65,12 @@ let pokemonRepository = (function () {
     });
   }
   
-    function showDetails(pokemon) {
-      pokemonRepository.loadDetails(pokemon).then(function () {
-        showDetails(pokemon);
-      });
-    }
+  function showDetails(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
+  }
+
   
   
     fetch('https://pokeapi.co/api/v2/pokemon/').then(function (response) {
