@@ -1,6 +1,7 @@
 Pokedex-app:
 
-This web application is designed using HTML, CSS and JavaScript that loads data from an external API and enables the viewing of data points in detail.
+This web application is designed using HTML, CSS and JavaScript, jQuery and Bootstrap.
+It loads data from an external API and enables the viewing of data points in detail.
 
 The app is designed in the following steps:
 
