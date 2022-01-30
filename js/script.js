@@ -23,7 +23,7 @@ let pokemonRepository = (function() {
   
       let $card = $('<div class="card" style="width:400px"></div>');
       let $image = $(
-        '<img class="card-img-top" alt="Card image" style="width:20%" />'
+        '<img class="card-img-top" alt="Card image" style="width:30%" />'
       );
       $image.attr("src", pokemon.imageUrlFront);
       let $cardBody = $('<div class="card-body"></div>');
